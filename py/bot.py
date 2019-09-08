@@ -5,26 +5,18 @@ import random
 
 quotes = \
 [
-" 1 ",
-" 2 ",
-"3 ",
-"4 ",
-" 5 ",
-" 6",
-"7",
-"8 ",
-"9 ",
-" 10 ",
+" I love UCLA ",
+" I hate UCLA ",
+" Go Bruins ",
 
 ]
 
 reddit = praw.Reddit('bot1')
 
-subreddit = reddit.subreddit("dataisbeautiful")
+subreddit = reddit.subreddit("pythonforengineers")
 
 for comment in subreddit.stream.comments():
     print(comment.body)
-    if re.search("Huntae", comment.body, re.IGNORECASE):
-            reply = "Huntae the says: " + random.choice(quotes)
+    if re.search("UCLA", comment.body, re.IGNORECASE):
+            reply = "Huntae the bot says: " + random.choice(quotes)
             comment.reply(reply)
-            print(reply)
