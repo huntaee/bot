@@ -17,10 +17,11 @@ quotes = \
 
 reddit = praw.Reddit('bot1')
 
-subreddit = reddit.subreddit("pythonforengineers")
+subreddit = reddit.subreddit("explainlikeimfive")
 
 for comment in subreddit.stream.comments():
     print(comment.body)
-    if re.search("UCLA", comment.body, re.IGNORECASE):
-            reply = "Huntae the bot says: " + random.choice(quotes)
-            comment.reply(reply)
+    if re.search("huntae", comment.body, re.IGNORECASE) == None:
+        if re.search("UCLA", comment.body, re.IGNORECASE):
+                reply = "Huntae the bot says: " + random.choice(quotes)
+                comment.reply(reply)
