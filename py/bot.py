@@ -13,7 +13,7 @@ quotes = \
 
 reddit = praw.Reddit('bot1')
 
-subreddit = reddit.subreddit("pythonforengineers")
+subreddit = reddit.subreddit("explainlikeimfive")
 
 for comment in subreddit.stream.comments():
     print(comment.body)
